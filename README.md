@@ -1,4 +1,4 @@
-# CloudEvent Viewer
+# CloudEvent Player
 
 This micro-app can be used as a test **subscriber** and/or test **emitter** of [CloudEvents](https://cloudevents.io/).
 
