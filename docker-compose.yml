@@ -1,0 +1,15 @@
+version: '3.4'
+
+name: subscribers
+services:
+  event-player:
+    image: cloudevent-player:latest
+    ports:
+      - 8884:80
+    environment:
+      api_tag: "0.1.15"
+      api_repository_url: "https://REGISTRY/REGISTRY_PATH/cloudevent-player"
+      api_log_level: DEBUG
+      api_log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+      api_default_generator_gateways: '{"urls": ["http://localhost/events/pub", "http://event-player-dev/events/pub", "https://events-gateway.mydomain.com/events/pub", "https://webhook.site/bddfa626-2c77-4914-9c4a-68b4db99f9aa"]}'
+      api_browser_queue_size: 1000
